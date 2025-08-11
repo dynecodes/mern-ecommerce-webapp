@@ -17,7 +17,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(() => {
-    fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/allproducts')
+    fetch('https://mern-ecommerce-webapp-back-end.onrender.com/allproducts')
       .then((response) => response.json())
       .then((data) => {
         console.log('Fetched Products:', data); // Log the products
@@ -25,7 +25,7 @@ const ShopContextProvider = (props) => {
       });
   
     if (localStorage.getItem('auth-token')) {
-      fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/getcart', {
+      fetch('https://mern-ecommerce-webapp-back-end.onrender.com/getcart', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
