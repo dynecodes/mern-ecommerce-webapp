@@ -2,13 +2,17 @@
   display: flex;
   justify-content: space-around;
   padding: 16px;
-  box-shadow: 0 1px 3px -2px black;
+  box-shadow: 0 1px 3px -2px rgb(236, 59, 183);
   align-items: center;
 }
 .nav-logo{
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: baseline;
+}
+.nav-logo img{
+  width: 150px;   
+  height: auto;   
+  max-width: 100%;
 }
 .nav-logo p {
   color: black;
@@ -81,7 +85,7 @@
     padding: 12px 50px;
   }
   .nav-logo img{
-    width: 40px;
+    width:90px;
   }
   .nav-logo p{
     font-size: 25px;
