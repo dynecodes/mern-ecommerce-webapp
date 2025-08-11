@@ -1,14 +1,77 @@
+// import React, { useEffect, useState } from 'react';
+// import './ListProduct.css';
+// import cross_icon from '../../assets/cross_icon.png';
+
+// const ListProduct = () => {
+//   const [allproducts, setAllProducts] = useState([]);
+
+//   const fetchInfo = async () => {
+//     await fetch('https://mern-ecommerce-webapp-back-end.onrender.com/allproducts') // Updated URL
+//       .then((res) => res.json())
+//       .then((data) => { setAllProducts(data) });
+//   };
+
+//   useEffect(() => {
+//     fetchInfo();
+//   }, []);
+
+//   const remove_product = async (id) => {
+//     await fetch('https://mern-ecommerce-webapp-back-end.onrender.com/removeproduct', { // Updated URL
+//       method: 'POST',
+//       headers: {
+//         Accept: 'application/json',
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ id: id })
+//     });
+//     await fetchInfo();
+//   };
+
+//   return (
+//     <div className='list-product'>
+//       <h1>All Product List</h1>
+//       <div className="listproduct-format-main">
+//         <p>Products</p>
+//         <p>Title</p>
+//         <p>Old Price</p>
+//         <p>New Price</p>
+//         <p>Category</p>
+//         <p>Remove</p>
+//       </div>
+//       <div className="listproduct-allproducts">
+//         <hr />
+//         {allproducts.map((product, index) => {
+//           return (
+//             <div key={index} className="listproduct-format-main listproduct-format">
+//               <img src={product.image} alt="" className="listproduct-product-icon" />
+//               <p>{product.name}</p>
+//               <p>${product.old_price}</p>
+//               <p>${product.new_price}</p>
+//               <p>{product.category}</p>
+//               <img onClick={() => { remove_product(product.id) }} className='listproduct-remove-icon' src={cross_icon} alt="" />
+//               <hr />
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default ListProduct;
+
 import React, { useEffect, useState } from 'react';
 import './ListProduct.css';
 import cross_icon from '../../assets/cross_icon.png';
 
 const ListProduct = () => {
   const [allproducts, setAllProducts] = useState([]);
+  const backendURL = "https://mern-ecommerce-webapp-back-end.onrender.com";
 
   const fetchInfo = async () => {
-    await fetch('https://mern-ecommerce-webapp-back-end.onrender.com/allproducts') // Updated URL
-      .then((res) => res.json())
-      .then((data) => { setAllProducts(data) });
+    const res = await fetch(`${backendURL}/allproducts`);
+    const data = await res.json();
+    setAllProducts(data);
   };
 
   useEffect(() => {
@@ -16,13 +79,13 @@ const ListProduct = () => {
   }, []);
 
   const remove_product = async (id) => {
-    await fetch('https://mern-ecommerce-webapp-back-end.onrender.com/removeproduct', { // Updated URL
-      method: 'POST',
+    await fetch(`${backendURL}/removeproduct`, {
+      method: 'POST', // change to DELETE if backend expects DELETE
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ id: id })
+      body: JSON.stringify({ id })
     });
     await fetchInfo();
   };
@@ -40,22 +103,30 @@ const ListProduct = () => {
       </div>
       <div className="listproduct-allproducts">
         <hr />
-        {allproducts.map((product, index) => {
-          return (
-            <div key={index} className="listproduct-format-main listproduct-format">
-              <img src={product.image} alt="" className="listproduct-product-icon" />
-              <p>{product.name}</p>
-              <p>${product.old_price}</p>
-              <p>${product.new_price}</p>
-              <p>{product.category}</p>
-              <img onClick={() => { remove_product(product.id) }} className='listproduct-remove-icon' src={cross_icon} alt="" />
-              <hr />
-            </div>
-          );
-        })}
+        {allproducts.map((product, index) => (
+          <div key={index} className="listproduct-format-main listproduct-format">
+            <img 
+              src={`${backendURL}/images/${product.image}`} 
+              alt={product.name} 
+              className="listproduct-product-icon" 
+            />
+            <p>{product.name}</p>
+            <p>${product.old_price}</p>
+            <p>${product.new_price}</p>
+            <p>{product.category}</p>
+            <img 
+              onClick={() => remove_product(product.id || product._id)} 
+              className='listproduct-remove-icon' 
+              src={cross_icon} 
+              alt="Remove" 
+            />
+            <hr />
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default ListProduct;
+
