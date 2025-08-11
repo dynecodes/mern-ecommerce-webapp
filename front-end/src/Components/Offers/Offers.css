@@ -5,7 +5,7 @@
   margin: auto;
   padding: 0px 140px;
   margin-bottom: 150px;
-  background: linear-gradient(180deg,  #fde1ff 0%, gray 60%);
+  background: linear-gradient(180deg,  #fde1ff 0%, rgb(216, 255, 255) 60%);
 }
 .offers-left{
   flex: 1;
@@ -41,6 +41,14 @@
   justify-content: flex-end;
   padding-top: 50px;
 }
+
+.offers-right img{
+  width: 500px;   /* adjust size as needed */
+  height: auto;   /* keeps aspect ratio */
+  max-width: 300%;
+}
+
+
 @media(max-width:1280px){
   .offers{
     padding: 0px 80px;
