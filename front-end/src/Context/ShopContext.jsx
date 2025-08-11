@@ -46,7 +46,7 @@ const ShopContextProvider = (props) => {
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }));
     if (localStorage.getItem('auth-token')) {
-      fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/addtocart', { // Updated URL
+      fetch('https://mern-ecommerce-webapp-back-end.onrender.com/addtocart', { // Updated URL
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -63,7 +63,7 @@ const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (localStorage.getItem('auth-token')) {
-      fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/removefromcart', { // Updated URL
+      fetch('https://mern-ecommerce-webapp-back-end.onrender.com/removefromcart', { // Updated URL
         method: 'POST',
         headers: {
           Accept: 'application/json',
