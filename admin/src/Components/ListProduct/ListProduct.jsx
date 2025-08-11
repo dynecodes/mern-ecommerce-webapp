@@ -43,16 +43,12 @@ const ListProduct = () => {
         {allproducts.map((product, index) => {
           return (
             <div key={index} className="listproduct-format-main listproduct-format">
-              <img src={product.image?.startsWith('http')
-                    ? product.image
-                    : `https://mern-ecommerce-webapp-back-end.onrender.com/images/${product.image?.replace(/^undefined\//, '')}`
-                }
-                alt="" className="listproduct-product-icon" />
+              <img src={product.image} alt="" className="listproduct-product-icon" />
               <p>{product.name}</p>
               <p>${product.old_price}</p>
               <p>${product.new_price}</p>
               <p>{product.category}</p>
-              <img onClick={() => { remove_product(product._id) }} className='listproduct-remove-icon' src={cross_icon} alt="" />
+              <img onClick={() => { remove_product(product.id) }} className='listproduct-remove-icon' src={cross_icon} alt="" />
               <hr />
             </div>
           );
@@ -63,4 +59,3 @@ const ListProduct = () => {
 }
 
 export default ListProduct;
-
