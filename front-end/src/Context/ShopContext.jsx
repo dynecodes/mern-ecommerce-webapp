@@ -17,7 +17,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(() => {
-    fetch('https://e-commerce-react-xp0f.onrender.com/allproducts')
+    fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/allproducts')
       .then((response) => response.json())
       .then((data) => {
         console.log('Fetched Products:', data); // Log the products
@@ -25,7 +25,7 @@ const ShopContextProvider = (props) => {
       });
   
     if (localStorage.getItem('auth-token')) {
-      fetch('https://e-commerce-react-xp0f.onrender.com/getcart', {
+      fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/getcart', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -46,7 +46,7 @@ const ShopContextProvider = (props) => {
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }));
     if (localStorage.getItem('auth-token')) {
-      fetch('https://e-commerce-react-xp0f.onrender.com/addtocart', { // Updated URL
+      fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/addtocart', { // Updated URL
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -63,7 +63,7 @@ const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (localStorage.getItem('auth-token')) {
-      fetch('https://e-commerce-react-xp0f.onrender.com/removefromcart', { // Updated URL
+      fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/removefromcart', { // Updated URL
         method: 'POST',
         headers: {
           Accept: 'application/json',
