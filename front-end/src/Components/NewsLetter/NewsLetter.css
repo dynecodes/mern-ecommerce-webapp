@@ -8,7 +8,7 @@
   margin: auto;
   padding: 0px 140px;
   margin-bottom: 150px;
-  background: linear-gradient(180deg, #fde1ff 0%, grey 60%);
+  background: linear-gradient(180deg, #fde1ff 0%, rgb(216, 255, 255) 60%);
   gap: 30px;
 }
 .newsLetter h1{
