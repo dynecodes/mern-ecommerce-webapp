@@ -16,7 +16,7 @@ const LoginSignup = () => {
   const login = async () => {
     try {
       console.log("Login Function Executed", formData);
-      const response = await fetch('https://e-commerce-react-xp0f.onrender.com/login', {
+      const response = await fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/login', {
         method: 'POST',
         headers: {
           Accept: 'application/json', // Updated content type
@@ -42,7 +42,7 @@ const LoginSignup = () => {
   const signup = async () => {
     try {
       console.log("Signup Function Executed", formData);
-      const response = await fetch('https://e-commerce-react-xp0f.onrender.com/signup', {
+      const response = await fetch('https://mern-ecommerce-webapp-backend-iz8e.onrender.com/signup', {
         method: 'POST',
         headers: {
           Accept: 'application/json', // Updated content type
