@@ -55,20 +55,9 @@ const upload = multer({ storage: storage });
 // API Root
 app.get("/", (req, res) => res.send("Express App is Running"));
 
-// Upload Endpoint with HTTPS Image URL
-// app.post("/upload", upload.single('product'), (req, res) => {
-//   const imageUrl = `${process.env.BASE_URL}/images/${req.file.filename}`;
-//   res.json({ success: 1, image_url: imageUrl });
-// });
+//Upload Endpoint with HTTPS Image URL
 app.post("/upload", upload.single('product'), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ success: 0, error: "No file uploaded" });
-  }
-
-  // Use BASE_URL from .env, or fall back to the current request's protocol + host
-  const baseUrl = process.env.BASE_URL || `${req.protocol}://${req.get('host')}`;
-  const imageUrl = `${baseUrl}/images/${req.file.filename}`;
-
+  const imageUrl = `${process.env.BASE_URL}/images/${req.file.filename}`;
   res.json({ success: 1, image_url: imageUrl });
 });
 
