@@ -6,7 +6,7 @@ const ListProduct = () => {
   const [allproducts, setAllProducts] = useState([]);
 
   const fetchInfo = async () => {
-    await fetch('https://e-commerce-react-xp0f.onrender.com/allproducts') // Updated URL
+    await fetch('https://mern-ecommerce-webapp-back-end.onrender.com/allproducts') // Updated URL
       .then((res) => res.json())
       .then((data) => { setAllProducts(data) });
   };
@@ -16,7 +16,7 @@ const ListProduct = () => {
   }, []);
 
   const remove_product = async (id) => {
-    await fetch('https://e-commerce-react-xp0f.onrender.com/removeproduct', { // Updated URL
+    await fetch('https://mern-ecommerce-webapp-back-end.onrender.com/removeproduct', { // Updated URL
       method: 'POST',
       headers: {
         Accept: 'application/json',
