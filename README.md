@@ -43,8 +43,9 @@ This project is a fully functional e-commerce platform built with React.js. It e
 ## Project Structure
 =======
 # React + Vite
+ Live Site admin:  [https://mern-ecommerce-webapp-admin.onrender.com]
+ Live Site frontend: [https://mern-ecommerce-webapp-front-end.onrender.com]
 
-# Live Site frontend: [https://mern-ecommerce-webapp-front-end.onrender.com]
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
