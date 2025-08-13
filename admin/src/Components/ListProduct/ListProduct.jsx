@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ListProduct.css';
 import cross_icon from '../../assets/cross_icon.png';
 
-
-
+const backend_url = import.meta.env.VITE_BASE_URL;
 
 const ListProduct = () => {
   const [allproducts, setAllProducts] = useState([]);
