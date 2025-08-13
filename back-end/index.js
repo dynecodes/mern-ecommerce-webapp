@@ -92,6 +92,27 @@ app.post('/addproduct', async (req, res) => {
   res.json({ success: true, name: req.body.name });
 });
 
+
+
+// REMOVE PRODUCT — NEW FIXED ROUTE
+app.post('/removeproduct', async (req, res) => {
+  try {
+    const { id } = req.body;
+    if (!id) {
+      return res.status(400).json({ success: false, message: "Product ID is required" });
+    }
+    const deleted = await Product.findOneAndDelete({ id: id });
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: "Product not found" });
+    }
+    res.json({ success: true, message: "Product removed successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, error: "Server error" });
+  }
+});
+
+
 // User Schema and Model
 const Users = mongoose.model('Users', {
   name: { type: String },
@@ -222,20 +243,6 @@ app.post('/removefromcart', fetchUser, async (req, res) => {
   }
   res.json({ success: true, message: "Removed" }); // Return a JSON object
 });
-
-
-// Remove Product Endpoint
-app.post('/removeproduct', async (req, res) => {
-  try {
-    const { id } = req.body;
-    await Product.findOneAndDelete({ id: id });
-    res.json({ success: true, message: "Product removed" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, error: "Server error" });
-  }
-});
-
 
 
 // Get Cart Data
