@@ -224,6 +224,20 @@ app.post('/removefromcart', fetchUser, async (req, res) => {
 });
 
 
+// Remove Product Endpoint
+app.post('/removeproduct', async (req, res) => {
+  try {
+    const { id } = req.body;
+    await Product.findOneAndDelete({ id: id });
+    res.json({ success: true, message: "Product removed" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, error: "Server error" });
+  }
+});
+
+
+
 // Get Cart Data
 app.post('/getcart', fetchUser, async (req, res) => {
   let userData = await Users.findOne({ _id: req.user.id });
