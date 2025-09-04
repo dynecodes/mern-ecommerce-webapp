@@ -1,4 +1,4 @@
-.cartitems{
+/* .cartitems{
   margin: 100px 170px;
 }
 .cartitems hr{
@@ -111,5 +111,231 @@
   .cartitems-quantity{
     width: 40px;
     height: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+.cartitems{
+    margin: 20px 50px;
+  }
+  .cartitems-format-main{
+    grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr 0.5fr;
+    gap: 20px;
+    padding: 15px 0px;
+    font-size: 15px;
+  }
+  .carticon-product-icon{
+    height: 50px;
+  }
+  .cartitems-remove-icon{
+    margin: auto;
+  }
+  .cartitems-quantity{
+    width: 40px;
+    height: 30px;
+  }
+} */
+
+.cartitems {
+  margin: 80px auto;
+  max-width: 1200px; /* keeps layout centered */
+  padding: 0 20px;   /* side padding for small screens */
+}
+
+.cartitems hr {
+  height: 3px;
+  background: whitesmoke;
+  border: 0;
+}
+
+.cartitems-format-main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr; /* image, name, qty, price, total, remove */
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;
+  color: gray;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cartitems-format {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.carticon-product-icon {
+  height: 62px;
+}
+
+.cartitems-remove-icon {
+  width: 15px;
+  cursor: pointer;
+}
+
+.cartitems-quantity {
+  width: 64px;
+  height: 50px;
+  border: 2px solid white;
+  background: whitesmoke;
+}
+
+.cartitems-down {
+  display: flex;
+  flex-wrap: wrap; /* allow stacking on smaller screens */
+  margin: 60px 0;
+  gap: 40px;
+}
+
+.cartitems-total {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  gap: 20px;
+}
+
+.carticon-total-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.cartitems-total button {
+  width: 100%;
+  max-width: 280px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: red;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cartitems-promocode {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 250px;
+}
+
+.cartitems-promocode p {
+  color: gray;
+}
+
+.cartitems-promobox {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 15px;
+  height: 50px;
+  background: white;
+  border: 1px solid #ddd;
+}
+
+.cartitems-promobox input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.cartitems-promobox button {
+  width: 140px;
+  height: 100%;
+  font-size: 16px;
+  background: black;
+  color: rgb(206, 204, 204);
+  cursor: pointer;
+}
+/* 🔹 Tablet (≤1280px) */
+@media (max-width: 1280px) {
+  .cartitems {
+    margin: 40px auto;
+  }
+
+  .cartitems-format-main {
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr; /* remove one column for space */
+    gap: 20px;
+    font-size: 15px;
+  }
+
+  .carticon-product-icon {
+    height: 50px;
+  }
+
+  .cartitems-quantity {
+    width: 40px;
+    height: 30px;
+  }
+}
+/* 🔹 iPad / iPad Mini Portrait (≤768px) */
+@media (max-width: 768px) {
+  .cartitems {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .cartitems-format-main {
+    grid-template-columns: 1fr 2fr 1fr 1fr; /* image, name, qty, price */
+    font-size: 15px;
+    gap: 15px;
+  }
+
+  .carticon-product-icon {
+    height: 45px;
+  }
+
+  .cartitems-quantity {
+    width: 40px;
+    height: 30px;
+  }
+
+  .cartitems-down {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .cartitems-total button,
+  .cartitems-promobox {
+    width: 80%;
+    max-width: none;
+  }
+}
+/* 🔹 Mobile (≤500px) */
+@media (max-width: 500px) {
+  .cartitems {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .cartitems-format-main {
+    grid-template-columns: 1fr 2fr 1fr; /* image, name, qty only */
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .carticon-product-icon {
+    height: 40px;
+  }
+
+  .cartitems-quantity {
+    width: 35px;
+    height: 28px;
+  }
+
+  .cartitems-down {
+    flex-direction: column; /* stack total + promo */
+    gap: 20px;
+  }
+
+  .cartitems-total button,
+  .cartitems-promobox {
+    width: 100%;
+    max-width: none;
   }
 }
