@@ -37,32 +37,31 @@ An e-commerce application built with the MERN stack (MongoDB, Express, React, No
 
 
 ## 📂 Project Structure
+1. Clone the repo  
+   ```bash
+   mern-ecommerce-webapp:
+    back-end: # Server code (Express, MongoDB)
+      models: # Database schemas
+      routes: # API routes
+      controllers: # Business logic
+      middleware: # Auth, error handling, etc.
+      config: # DB connection, environment variables
+      server.js: # Entry point for backend
+    front-end: # React client application
+      src:
+        components: # Reusable UI components
+        pages: # Page components / routes
+        services: # API calls
+        context: # State management
+        styles: # CSS / SCSS files
+        App.js: # Main React app setup
+    README.md: ""
+    .env.example: # Example environment variable file
+    package.json: ""
+    yarn.lock: ""
+  
 
-```yaml
-mern-ecommerce-webapp:
-  back-end: # Server code (Express, MongoDB)
-    models: # Database schemas
-    routes: # API routes
-    controllers: # Business logic
-    middleware: # Auth, error handling, etc.
-    config: # DB connection, environment variables
-    server.js: # Entry point for backend
-  front-end: # React client application
-    src:
-      components: # Reusable UI components
-      pages: # Page components / routes
-      services: # API calls
-      context: # State management
-      styles: # CSS / SCSS files
-      App.js: # Main React app setup
-  README.md: ""
-  .env.example: # Example environment variable file
-  package.json: ""
-  yarn.lock: ""
-
-
-
-#  🔗 Live Demo
+##  🔗 Live Demo
  Live Site admin:  [https://mern-ecommerce-webapp-admin.onrender.com]
 
  Live Site frontend: [https://mern-ecommerce-webapp-front-end.onrender.com]
