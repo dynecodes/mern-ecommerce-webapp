@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# E-Commerce React Application
+
+## E-Commerce Web App
 
 ## Table of Contents
 - [Introduction](#introduction)
