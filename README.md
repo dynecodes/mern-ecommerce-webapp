@@ -75,7 +75,7 @@ Open another terminal window/tab:
 cd front-end
 npm install
 npm start
-Visit http://localhost:3000 (or whatever ports are set) to see the app
+Visit http://localhost: (or whatever ports are set) to see the app
 
 
 ## ⚙ Usage
