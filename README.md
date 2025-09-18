@@ -29,27 +29,75 @@ This project is a fully functional e-commerce platform built with React.js. It e
 
 ---
 
-## Tech Stack
-- React.js
-- JavaScript (ES6+)
-- CSS3 / SCSS
-- React Router for client-side routing
-- Axios for HTTP requests
-- Context API / Redux for state management
-- Local storage/session storage for persisted cart data
+## 🛠 Tech Stack
 
----
+| Layer | Technology |
+|-------|-------------|
+| Backend | Node.js + Express |
+| Database | MongoDB |
+| Frontend | React.js |
+| State Management | Context API / Redux (if used) |
+| HTTP / APIs | RESTful APIs via Axios or Fetch |
+| Authentication | JWT or session cookies |
+| Styling | CSS / SCSS / styled-components (or CSS framework) |
 
-## Project Structure
+--
 =======
-# React + Vite
+#  🔗 Live Demo
  Live Site admin:  [https://mern-ecommerce-webapp-admin.onrender.com]
-
 
  Live Site frontend: [https://mern-ecommerce-webapp-front-end.onrender.com]
 
+## 🚀 Getting Started
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Prerequisites
+
+- Node.js and npm (or Yarn) installed  
+- MongoDB instance (local or cloud, e.g. MongoDB Atlas)  
+- (Optional) Environment variables for keys / secrets  
+
+### Setup
+
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/dynecodes/mern-ecommerce-webapp.git
+   cd mern-ecommerce-webapp
+## Backend setup
+cd back-end
+npm install
+cp .env.example .env
+# Fill in appropriate values in .env (DB URI, JWT secret, etc.)
+npm start
+
+## Frontend setup
+Open another terminal window/tab:
+cd front-end
+npm install
+npm start
+Visit http://localhost:3000 (or whatever ports are set) to see the app
+
+
+⚙ Usage
+
+Users can browse products, add to cart, and checkout
+
+Admins can log in to dashboard to manage products & orders
+
+Ensure you handle environment variables securely in production
+
+🧑‍💻 Contributing
+
+Contributions are welcome! If you find bugs or want to add features:
+
+Fork the repository
+
+Create a new branch: git checkout -b my-feature
+
+Make your changes & test locally
+
+Commit & push: git push origin my-feature
+
+Open a Pull Request
 
 Currently, two official plugins are available:
 
