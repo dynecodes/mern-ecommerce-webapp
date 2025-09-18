@@ -12,8 +12,7 @@
 
 
 ## Introduction
-This project is a fully functional e-commerce platform built with React.js. It encompasses a modern, responsive design, user authentication, product browsing, shopping cart management, and order processing. The goal is to provide a seamless shopping experience for users and an easy-to-maintain codebase for developers.
-
+An e-commerce application built with the MERN stack (MongoDB, Express, React, Node.js) that provides shopping functionality, user authentication, order management, and an admin dashboard.  
 
 ## Features
 - User Authentication: Sign up, login, logout
