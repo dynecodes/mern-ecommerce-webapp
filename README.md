@@ -37,6 +37,8 @@ An e-commerce application built with the MERN stack (MongoDB, Express, React, No
 
 
 ## 📂 Project Structure
+
+```yaml
 mern-ecommerce-webapp:
   back-end: # Server code (Express, MongoDB)
     models: # Database schemas
