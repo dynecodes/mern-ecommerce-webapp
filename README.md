@@ -56,17 +56,18 @@ This project is a fully functional e-commerce platform built with React.js. It e
 - MongoDB instance (local or cloud, e.g. MongoDB Atlas)  
 - (Optional) Environment variables for keys / secrets  
 
-### Setup
 
+### Setup
 1. Clone the repo  
    ```bash
    git clone https://github.com/dynecodes/mern-ecommerce-webapp.git
    cd mern-ecommerce-webapp
+   
 ## Backend setup
 cd back-end
 npm install
 cp .env.example .env
-# Fill in appropriate values in .env (DB URI, JWT secret, etc.)
+Fill in appropriate values in .env (DB URI, JWT secret, etc.)
 npm start
 
 ## Frontend setup
@@ -77,30 +78,18 @@ npm start
 Visit http://localhost:3000 (or whatever ports are set) to see the app
 
 
-⚙ Usage
+## ⚙ Usage
+- Users can browse products, add to cart, and checkout
+- Admins can log in to dashboard to manage products & orders
+- Ensure you handle environment variables securely in production
 
-Users can browse products, add to cart, and checkout
-
-Admins can log in to dashboard to manage products & orders
-
-Ensure you handle environment variables securely in production
-
-🧑‍💻 Contributing
+## 🧑‍💻 Contributing
 
 Contributions are welcome! If you find bugs or want to add features:
 
-Fork the repository
+- Fork the repository
+- Create a new branch: git checkout -b my-feature
+- Make your changes & test locally
+- Commit & push: git push origin my-feature
+- Open a Pull Request
 
-Create a new branch: git checkout -b my-feature
-
-Make your changes & test locally
-
-Commit & push: git push origin my-feature
-
-Open a Pull Request
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
->>>>>>> 537eb9e0c6ec45c4ca22033f177a8e97dd45fddf
