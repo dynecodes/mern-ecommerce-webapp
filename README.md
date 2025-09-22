@@ -1,5 +1,5 @@
 
-## E-Commerce Web App
+## Cartzy Shop (E-Commerce Web App)
 
 ## Table of Contents
 - [Introduction](#introduction)
